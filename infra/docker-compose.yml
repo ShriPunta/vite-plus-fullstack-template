@@ -1,0 +1,23 @@
+# Environment variables are loaded from .env in the repo root.
+# Docker Compose resolves .env relative to the working directory, not this file.
+# Always run from repo root:
+#   docker compose -f infra/docker-compose.yml up
+# All variables use ${VAR:-default} so the defaults match .env.example.
+
+services:
+  postgres:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-app}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5

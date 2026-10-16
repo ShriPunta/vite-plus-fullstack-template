@@ -1,0 +1,49 @@
+{
+	"name": "vite-plus-fullstack-template",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Vite+ monorepo: Hono API + Vite React TanStack web + Drizzle Postgres.",
+	"keywords": [
+		"drizzle",
+		"hono",
+		"monorepo",
+		"postgres",
+		"react",
+		"react-compiler",
+		"tanstack",
+		"template",
+		"vite",
+		"vite-plus"
+	],
+	"license": "MIT",
+	"author": "Shridhar Puntambekar",
+	"type": "module",
+	"scripts": {
+		"dev": "vp run -r --parallel dev",
+		"build": "vp run -r build",
+		"test": "vp test",
+		"ready": "vp check && vp test && vp run -r build",
+		"type-check": "vp check --no-fmt --no-lint",
+		"db:generate": "vp run @pkg/schema#db:generate",
+		"db:migrate": "vp run @pkg/schema#db:migrate",
+		"db:seed": "vp run @pkg/schema#db:seed",
+		"docker:up": "docker compose -f infra/docker-compose.yml up -d",
+		"docker:down": "docker compose -f infra/docker-compose.yml down",
+		"prepare": "vp config"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:",
+		"typescript": "catalog:",
+		"vite-plus": "catalog:"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "pnpm",
+			"version": "12.11.2",
+			"onFail": "download"
+		}
+	},
+	"engines": {
+		"node": ">=24.11.0"
+	}
+}

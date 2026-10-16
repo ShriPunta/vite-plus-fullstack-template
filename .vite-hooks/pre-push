@@ -1,0 +1,2 @@
+vp check --no-fmt --no-lint
+vp test

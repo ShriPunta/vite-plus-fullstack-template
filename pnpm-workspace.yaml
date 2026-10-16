@@ -1,0 +1,50 @@
+packages:
+  - apps/*
+  - packages/*
+
+catalogMode: prefer
+
+catalog:
+  "@hono/node-server": ^2.1.5
+  "@hono/zod-openapi": ^1.6.3
+  hono: ^4.13.13
+  "@radix-ui/react-slot": ^1.5.0
+  "@scalar/hono-api-reference": ^0.12.12
+  "@tailwindcss/vite": ^4.3.3
+  "@tanstack/react-router": ^1.170.44
+  "@tanstack/router-plugin": ^1.168.46
+  "@types/node": ^26.6.5
+  "@types/react": ^19.3.0
+  "@types/react-dom": ^19.3.0
+  "@vitejs/plugin-react": ^6.1.2
+  class-variance-authority: ^0.7.1
+  clsx: ^2.1.1
+  drizzle-kit: ^0.31.11
+  drizzle-orm: ^0.45.4
+  oxc-transform-react: ~0.152.0
+  postgres: ^3.4.9
+  react: ^19.3.1
+  react-dom: ^19.3.1
+  tailwind-merge: ^3.7.0
+  tailwindcss: ^4.3.3
+  typescript: ^7.0.2
+  vite: npm:@voidzero-dev/vite-plus-core@1.2.0
+  vite-plus: 1.2.0
+  zod: ^4.6.7
+
+overrides:
+  vite@*: "catalog:"
+  semver: ^7.8.1
+
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"
+
+allowBuilds:
+  esbuild: true
+
+blockExoticSubdeps: true
+minimumReleaseAge: 1440
+trustPolicy: no-downgrade

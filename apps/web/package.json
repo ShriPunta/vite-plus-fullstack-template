@@ -1,0 +1,34 @@
+{
+	"name": "@app/web",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vp dev",
+		"preview": "vp preview"
+	},
+	"dependencies": {
+		"@pkg/types": "workspace:*",
+		"@radix-ui/react-slot": "catalog:",
+		"@tanstack/react-router": "catalog:",
+		"class-variance-authority": "catalog:",
+		"clsx": "catalog:",
+		"react": "catalog:",
+		"react-dom": "catalog:",
+		"tailwind-merge": "catalog:",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "catalog:",
+		"@tanstack/router-plugin": "catalog:",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:",
+		"@types/react-dom": "catalog:",
+		"@vitejs/plugin-react": "catalog:",
+		"oxc-transform-react": "catalog:",
+		"tailwindcss": "catalog:",
+		"typescript": "catalog:",
+		"vite": "catalog:",
+		"vite-plus": "catalog:"
+	}
+}
